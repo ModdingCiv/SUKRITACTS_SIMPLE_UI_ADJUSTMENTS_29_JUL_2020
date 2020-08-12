@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Context>
+	
+	<ToolTipType Name="Suk_Religion_TT" >
+		<Grid ID="BG" SliceCorner="10,10" SliceTextureSize="33,32" Texture="Controls_Tooltip" AutoSize="1" InnerPadding="25,25" InnerOffset="10,10" Color="255,255,255,255" Anchor="C,T">
+			<Stack Offset="0,40" StackGrowth="Down" Hidden="0" Anchor="C,T">
+
+				<Container Size="220,35" ID="ExtraInfoContainer" Anchor="C,T">
+					<Stack Size="220,35" Anchor="C,T" StackGrowth="Right" Padding="4">
+						<Image ID="PressureReligionBannerIconContainer" Anchor="C,C" Size="30,30"  Texture="Religion_FollowersSlot" Hidden="0">
+							<Image ID="PressureReligionIcon" Anchor="C,C" Size="22,22" Texture="Religions22"/>
+						</Image>
+						<Label ID="PressureString" Anchor="C,C" Style="FontNormal16" Color="5,29,51,255" String="Religion"/>
+
+						<Image ID="CoversionReligionBannerIconContainer" Anchor="C,C" Size="30,30"  Texture="Religion_FollowersSlot" Hidden="0">
+							<Image ID="CoversionReligionIcon" Anchor="C,C" Size="22,22" Texture="Religions22"/>
+						</Image>
+						<Label ID="CoversionString" Anchor="C,C" Style="FontNormal16" Color="5,29,51,255" String="Religion"/>
+					</Stack>
+				</Container>
+
+				<Box Size="200,1" Anchor="C,T" Color="5,29,51,255" ID="ExtraInfoDivider"/>
+				<Stack ID="ReligionStack" StackGrowth="Down" Anchor="C,T" Offset="0,10"/>
+				<Container Size="220,auto" Anchor="C,T" Offset="0,10" ID="PantheonInfo">
+					<Box Size="200,1" Anchor="C,T" Color="5,29,51,255"/>
+					<Stack Size="220,58" StackGrowth="Right" Anchor="C,T" Offset="0,8">
+						<Image ID="PantheonBannerIconContainer" Anchor="C,C" Size="58,58"  Texture="Controls_CircleButton" Offset="-8,0" TextureOffset="0,174">
+							<Image ID="PantheonIcon" Anchor="C,C" Size="32,32" Texture="Religions22"/>
+						</Image>
+						<Stack ID="LabelContainer" AutoSize="1"	Anchor="C,C"	StackGrowth="Bottom" Padding="3" >
+							<Label ID="PantheonLabel" WrapWidth="160" Anchor="L,T" Style="FontFlair14" Color="5,29,51,255" String="Religion" SmallCaps="16" SmallCapsType="EveryWord"/>
+							<Label ID="PantheonName" WrapWidth="160" Anchor="L,T" Style="FontNormal14" Color="5,29,51,255" String="Religion"/>
+						</Stack>
+					</Stack>
+				</Container>
+			</Stack>
+
+			<Container			ID="ReligionMeter"		Anchor="C,T" Offset="0,-20" Size="0,0">
+				<Image	Anchor="C,C"	Texture="Religion_MeterPressureBG"/>
+				<Image			ID="MeterPressure"		Anchor="C,C" Offset="0,1" Texture="Religion_MeterPressureCenter" Color="255,255,255,255">
+					<Label ID="TotalString" Anchor="C,C" Style="FontFlair16" String="LOC_HUD_CITY_TOTAL" FontStyle="glow" EffectColor="255,255,255,70"/>
+				</Image>
+				<Container		ID="Meters"						Anchor="C,C"								Size="110,110" />
+			</Container>				
+		</Grid>	
+	</ToolTipType>
+
+	<Instance Name="Suk_ReligionInstance" >
+		<Grid ID="BG" Size="220,55" SliceCorner="10,10" SliceTextureSize="33,32" Texture="Controls_Tooltip" MinSize="220,45" InnerPadding="25,25" Anchor="L,C" InnerOffset="10,10" Color="255,255,255,50">
+			<Stack	ID="BGStack" AutoSize="1" Anchor="L,C" StackGrowth="Right" Padding="8" >
+				<Label	ID="FollowerNumber" Anchor="C,C" String="999" Style="FontFlair28" Color="5,29,51,255" KerningAdjustment="-3" />
+				<Image ID="ReligionBannerIconContainer" Anchor="L,C"	Size="30,30"  Texture="Religion_FollowersSlot" Hidden="0">
+					<Image ID="ReligionIcon" Anchor="C,C" Offset="0,0" Size="22,22" Texture="Religions22"/>
+				</Image>
+				<Stack ID="LabelContainer" AutoSize="1"	Anchor="L,C"	StackGrowth="Bottom" Padding="3" >
+					<Label ID="ReligionString" Anchor="L,T" Style="FontFlair16" Color="5,29,51,255" String="Religion" SmallCaps="20" SmallCapsType="EveryWord"/>
+					<Label ID="PressureString" Anchor="L,T" Style="FontNormal14" Color="5,29,51,255" String="Religion"/>
+				</Stack>
+			</Stack>
+		</Grid>
+	</Instance>
+
+	<Instance Name="ReligionMeterNone">
+		<Meter ID="Meter" Size="110,110" Texture="Religion_MeterPressureNone" />
+	</Instance>
+
+</Context>

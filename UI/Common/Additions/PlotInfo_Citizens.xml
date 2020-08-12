@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Context Layer="WorldAnchor" >
+
+	<WorldAnchor ID="GrowthHexAnchor" Hidden="1">
+		<AlphaAnim ID="GrowthHexAlpha" ShowOnMouseOver="0" AlphaStart="0" AlphaEnd="1" Speed="5" Function="OutSine" Cycle="Once">
+			<Stack	 ID="GrowthHexStack" Anchor="C,T" StackGrowth="Right" Padding="5">
+				<Label ID="TurnsLeftLabel" Anchor="L,C" Style="FontFlair26" Color0="255,113,246,255" Color1="52,33,90,128" Color2="248,188,238,255" FontStyle="Stroke"/>
+				<Label ID="TurnsLeftDescription" Anchor="L,C" Style="FontNormal14" Color0="252,201,247,255" Color1="0,0,0,100" FontStyle="Stroke" WrapWidth="130" />
+			</Stack>
+		</AlphaAnim>
+	</WorldAnchor>
+
+	<Container				ID="PlotInfoContainer" />
+
+	<Instance					Name="InfoInstance">
+		<WorldAnchor		ID="Anchor"																						Size="2,2" >
+			<AlphaAnim																			Anchor="L,T"									Size="Parent,Parent" ShowOnMouseOver="0" AlphaStart="0" AlphaEnd="1" Speed="5" Function="OutSine" Cycle="Once" ID="CitizenButtonAnim">
+
+				<Image				ID="CitizenButton"			Anchor="C,T"	Offset="0,-50"		Size="64,64"			Texture="CityPanel_ManageCitizenButton.dds"  Hidden="0" NoStateChange="1">
+					<Image			ID="LockedIcon"					Anchor="R,B"  Offset="-5,-5"	Size="32,32"			Texture="Padlock" Hidden="1"/>
+				</Image>
+			</AlphaAnim>
+		</WorldAnchor>
+	</Instance>
+	
+</Context>

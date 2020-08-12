@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="805cc499-c534-4e0a-bdce-32fb3c53ba38" version="1">
+  <Properties>
+    <Name>Sukritact's Simple UI Adjustments</Name>
+    <Description>Makes simple QoL changes to the UI</Description>
+    <Created>1596018829</Created>
+    <Teaser>Makes simple QoL changes to the UI</Teaser>
+    <Authors>Sukritact</Authors>
+    <SpecialThanks>Divine Yuri</SpecialThanks>
+    <AffectsSavedGames>0</AffectsSavedGames>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+  </Properties>
+  <ActionCriteria>
+    <Criteria id="Expansion1">
+      <GameCoreInUse>Expansion1</GameCoreInUse>
+    </Criteria>
+    <Criteria id="BaseGame">
+      <GameCoreInUse>Base</GameCoreInUse>
+    </Criteria>
+    <Criteria id="Expansion2">
+      <GameCoreInUse>Expansion2</GameCoreInUse>
+    </Criteria>
+    <Criteria id="Expansion1+">
+      <GameCoreInUse>Expansion1,Expansion2</GameCoreInUse>
+    </Criteria>
+    <Criteria id="CQUI_Conflict">
+      <ModInUse inverse="1">1d44b5e7-753e-405b-af24-5ee634ec8a01</ModInUse>
+    </Criteria>
+    <Criteria id="CQUI_Required">
+      <ModInUse>1d44b5e7-753e-405b-af24-5ee634ec8a01</ModInUse>
+    </Criteria>
+  </ActionCriteria>
+  <FrontEndActions>
+    <UpdateText id="UpdateText">
+      <File>Core/Localisation.sql</File>
+    </UpdateText>
+    <UpdateDatabase id="UpdateDatabase">
+      <File>Core/Config.sql</File>
+    </UpdateDatabase>
+  </FrontEndActions>
+  <InGameActions>
+    <UpdateText id="UpdateText">
+      <Properties>
+        <LoadOrder>10</LoadOrder>
+      </Properties>
+      <File>Core/Localisation.sql</File>
+    </UpdateText>
+    <UpdateArt id="UpdateArt">
+      <Properties>
+        <LoadOrder>10</LoadOrder>
+      </Properties>
+      <File>Sukritact's Simple UI Adjustments.dep</File>
+    </UpdateArt>
+    <UpdateIcons id="UpdateIcons">
+      <Properties>
+        <LoadOrder>10</LoadOrder>
+      </Properties>
+      <File>Core/IconDefinitions.sql</File>
+    </UpdateIcons>
+    <ImportFiles id="ImportFiles_Common">
+      <Properties>
+        <LoadOrder>10</LoadOrder>
+      </Properties>
+      <File>UI/Common/AdjacencyBonusSupport.lua</File>
+      <File>UI/Common/Additions/Suk_ScreenshotMode_Controls.lua</File>
+    </ImportFiles>
+    <AddUserInterfaces id="AddUserInterfaces_Common">
+      <Properties>
+        <Context>InGame</Context>
+        <LoadOrder>10</LoadOrder>
+      </Properties>
+      <File>UI/Common/Additions/Suk_ReligionTT.xml</File>
+      <File>UI/Common/Additions/Suk_ScreenshotMode.xml</File>
+      <File>UI/Common/Additions/PlotInfo_Citizens.xml</File>
+      <File>UI/Common/Additions/Suk_YieldTT.xml</File>
+      <File>UI/Common/Additions/Suk_ProductionTT.xml</File>
+    </AddUserInterfaces>
+    <ReplaceUIScript id="Replace_CityBannerManager">
+      <Properties>
+        <LuaContext>CityBannerManager</LuaContext>
+        <LuaReplace>UI/Common/CityBannerManager_Suk_UI.lua</LuaReplace>
+        <LoadOrder>10</LoadOrder>
+      </Properties>
+      <Criteria>CQUI_Conflict</Criteria>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="Replace_CQUI_CityBannerManager">
+      <Properties>
+        <LuaContext>CityBannerManager</LuaContext>
+        <LuaReplace>UI/Common/CityBannerManager_Suk_UI.lua</LuaReplace>
+        <LoadOrder>201</LoadOrder>
+      </Properties>
+      <Criteria>CQUI_Required</Criteria>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="Replace_StatusMessagePanel">
+      <Properties>
+        <LuaContext>StatusMessagePanel</LuaContext>
+        <LuaReplace>UI/Common/StatusMessagePanel_SukUI.lua</LuaReplace>
+        <LoadOrder>10</LoadOrder>
+      </Properties>
+    </ReplaceUIScript>
+    <ImportFiles id="ImportFiles_CQUI_Conflict">
+      <Properties>
+        <LoadOrder>10</LoadOrder>
+      </Properties>
+      <Criteria>CQUI_Conflict</Criteria>
+      <File>UI/Common/CityPanel.lua</File>
+      <File>UI/Common/CityPanel.xml</File>
+    </ImportFiles>
+    <ReplaceUIScript id="Replace_CQUI_CityPanel">
+      <Properties>
+        <LuaContext>CityPanel</LuaContext>
+        <LuaReplace>UI/CQUI/Suk_CQUI_CityPanel.lua</LuaReplace>
+        <LoadOrder>10</LoadOrder>
+      </Properties>
+      <Criteria>CQUI_Required</Criteria>
+    </ReplaceUIScript>
+  </InGameActions>
+  <Files>
+    <File>ArtDefs/UserInterface.artdef</File>
+    <File>Core/Config.sql</File>
+    <File>Core/IconDefinitions.sql</File>
+    <File>Core/Localisation.sql</File>
+    <File>Platforms/MacOS/BLPs/UITextures.blp</File>
+    <File>Platforms/Windows/BLPs/UITextures.blp</File>
+    <File>Sukritact's Simple UI Adjustments.dep</File>
+    <File>UI/Base/CityPanelOverview.lua</File>
+    <File>UI/Base/CityPanelOverview.xml</File>
+    <File>UI/Common/Additions/PlotInfo_Citizens.lua</File>
+    <File>UI/Common/Additions/PlotInfo_Citizens.xml</File>
+    <File>UI/Common/Additions/Suk_ProductionTT.lua</File>
+    <File>UI/Common/Additions/Suk_ProductionTT.xml</File>
+    <File>UI/Common/Additions/Suk_ReligionTT.lua</File>
+    <File>UI/Common/Additions/Suk_ReligionTT.xml</File>
+    <File>UI/Common/Additions/Suk_ScreenshotMode.lua</File>
+    <File>UI/Common/Additions/Suk_ScreenshotMode.xml</File>
+    <File>UI/Common/Additions/Suk_ScreenshotMode_Controls.lua</File>
+    <File>UI/Common/Additions/Suk_YieldTT.lua</File>
+    <File>UI/Common/Additions/Suk_YieldTT.xml</File>
+    <File>UI/Common/AdjacencyBonusSupport.lua</File>
+    <File>UI/Common/CityBannerManager_Suk_UI.lua</File>
+    <File>UI/Common/CityPanel.lua</File>
+    <File>UI/Common/CityPanel.xml</File>
+    <File>UI/Common/StatusMessagePanel_SukUI.lua</File>
+    <File>UI/CQUI/Suk_CQUI_CityPanel.lua</File>
+    <File>UI/Utils/Suk_CustomEventUtils.lua</File>
+  </Files>
+</Mod>
