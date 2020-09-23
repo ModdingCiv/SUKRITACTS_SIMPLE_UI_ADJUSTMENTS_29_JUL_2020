@@ -11,16 +11,5 @@
 	</WorldAnchor>
 
 	<Container				ID="PlotInfoContainer" />
-
-	<Instance					Name="InfoInstance">
-		<WorldAnchor		ID="Anchor"																						Size="2,2" >
-			<AlphaAnim																			Anchor="L,T"									Size="Parent,Parent" ShowOnMouseOver="0" AlphaStart="0" AlphaEnd="1" Speed="5" Function="OutSine" Cycle="Once" ID="CitizenButtonAnim">
-
-				<Image				ID="CitizenButton"			Anchor="C,T"	Offset="0,-50"		Size="64,64"			Texture="CityPanel_ManageCitizenButton.dds"  Hidden="0" NoStateChange="1">
-					<Image			ID="LockedIcon"					Anchor="R,B"  Offset="-5,-5"	Size="32,32"			Texture="Padlock" Hidden="1"/>
-				</Image>
-			</AlphaAnim>
-		</WorldAnchor>
-	</Instance>
 	
 </Context>

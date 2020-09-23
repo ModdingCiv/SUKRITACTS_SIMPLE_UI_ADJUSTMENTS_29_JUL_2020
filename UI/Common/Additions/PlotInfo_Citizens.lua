@@ -136,25 +136,6 @@ function ShowCitizens(iPlayer, iCity)
 	local tPlots = Map.GetCityPlots():GetPurchasedPlots(pCity)
 	local pCitizens = pCity:GetCitizens()	
 
-	if tPlots ~= nil and (table.count(tPlots) > 0) then
-
-		for i,iPlot in pairs(tPlots) do
-			local pPlot	= Map.GetPlotByIndex(iPlot)
-			local iX	= pPlot:GetX()
-			local iY	= pPlot:GetY()
-			bIsPlotWorked = pCitizens:IsPlotWorked(iX,iY)
-
-			if bIsPlotWorked then
-				local iIndex = pPlot:GetIndex()
-				local pInstance = GetInstanceAt(iIndex)
-				pInstance.CitizenButton:SetTextureOffsetVal(0, CITIZEN_BUTTON_HEIGHT*4)
-
-				pInstance.CitizenButtonAnim:SetToBeginning()
-				pInstance.CitizenButtonAnim:Play()
-			end
-		end
-	end
-
 	DisplayGrowthTile(pCity)
 	ShowCityYields(tPlots)
 end
